@@ -55,5 +55,3 @@ card:
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
 | position | string | 'top' | Position of the navigation bar. Options: 'top', 'bottom', 'sidebar' |
-```
-
