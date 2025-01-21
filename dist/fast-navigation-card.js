@@ -14,6 +14,7 @@ class FastNavigationCard extends HTMLElement {
       throw new Error('Please define a card configuration');
     }
     this.position = config.position || 'top';
+    this.background_style = config.background_style || 'solid'; // Neue Option: 'solid', 'blur', 'transparent'
     this.config = config;
     this.render();
   }
@@ -58,16 +59,36 @@ class FastNavigationCard extends HTMLElement {
       this.style.left = `${rect.left}px`;
     }
   }
-  render() {
+ render() {
+    // Hintergrund-Style basierend auf der Konfiguration
+    const getBackgroundStyle = () => {
+      switch(this.background_style) {
+        case 'blur':
+          return `
+            background: rgba(var(--card-background-color, 255, 255, 255), 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+          `;
+        case 'transparent':
+          return `
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+          `;
+        default: // 'solid'
+          return `
+            background: var(--ha-card-background, var(--card-background-color, white));
+          `;
+      }
+    };
+
     this.shadowRoot.innerHTML = `
       <style>
         :host {
           display: block;
           position: fixed;
           z-index: 1000;
-          background: rgba(var(--card-background-color, 255, 255, 255), 0.5);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          ${getBackgroundStyle()}
           width: 500px;
           padding: 0px;
           border-radius: 0px;
