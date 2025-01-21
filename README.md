@@ -48,4 +48,3 @@ card:
 | position | string | 'top' | Position of the navigation bar. Options: 'top', 'bottom', 'sidebar' |
 ```
 
-Möchten Sie, dass ich auch die `hacs.json` und eine passende MIT-Lizenz vorbereite?
