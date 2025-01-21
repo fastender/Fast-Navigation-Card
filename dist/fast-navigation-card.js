@@ -1,4 +1,4 @@
-class FastNavigationCard extends HTMLElement {  // Klassenname geändert
+class FastNavigationCard extends HTMLElement {
   static get properties() {
     return {
       hass: {},
@@ -47,23 +47,17 @@ class FastNavigationCard extends HTMLElement {  // Klassenname geändert
       this.observer = null;
     }
   }
- updatePosition() {
-   if (this.position === 'sidebar') {
-     // Für Sidebar keine left-Position berechnen
-     return;
-   }
-   
-   const mainContent = document.querySelector('home-assistant').shadowRoot
-     .querySelector('home-assistant-main').shadowRoot
-     .querySelector('ha-drawer').shadowRoot
-     .querySelector('.content');
-   
-   if (mainContent) {
-     const rect = mainContent.getBoundingClientRect();
-     this.style.left = `${rect.left}px`;
-   }
- }
-
+  updatePosition() {
+    const mainContent = document.querySelector('home-assistant').shadowRoot
+      .querySelector('home-assistant-main').shadowRoot
+      .querySelector('ha-drawer').shadowRoot
+      .querySelector('.content');
+    
+    if (mainContent) {
+      const rect = mainContent.getBoundingClientRect();
+      this.style.left = `${rect.left}px`;
+    }
+  }
   render() {
     this.shadowRoot.innerHTML = `
       <style>
@@ -71,7 +65,9 @@ class FastNavigationCard extends HTMLElement {  // Klassenname geändert
           display: block;
           position: fixed;
           z-index: 1000;
-          background: var(--ha-card-background, var(--card-background-color, white));
+          background: rgba(var(--card-background-color, 255, 255, 255), 0.5);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
           width: 500px;
           padding: 0px;
           border-radius: 0px;
@@ -132,5 +128,5 @@ window.customCards.push({
   type: "fast-navigation-card",
   name: "Fast Navigation Card",
   preview: true,
-  description: "A card for fast navigation with flexible positioning"
+  description: "A card for fast navigation with flexible positioning and blur effect"
 });
