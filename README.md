@@ -58,4 +58,3 @@ card:
 |------|------|---------|-------------|
 | position | string | 'top' | Position of the navigation bar. Options: 'top', 'bottom', 'sidebar' |
 | background_style | string | 'solid' | Style of the background. Options: 'solid', 'blur', 'transparent' |
-```
