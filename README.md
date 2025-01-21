@@ -4,20 +4,27 @@ A custom card for Home Assistant that provides a flexible navigation bar that ca
 
 ![Live Preview](./docs/example-1.png)
 
+## Important Note
+This card is specifically designed for dashboards that have a maximum width of one section. It will not align correctly with dashboards that use multiple sections in their layout.
+
 ## Features
 
 - Three positioning options: top, bottom, and sidebar
 - Responsive design
 - Automatic alignment with main content
 - Supports grid layout for navigation buttons
+- Perfect for single-section dashboard layouts
+
 
 ## Installation
 
-### HACS (Recommended)
+### HACS (Custom Repository)
 1. In HACS, click on "Frontend" section
 2. Click the menu icon in the upper right and select "Custom repositories"
-3. Add this repository URL and select "Lovelace" as category
-4. Click "Install"
+3. Add this repository URL: [https://github.com/fastender/Fast-Navigation-Card]
+4. Select "Lovelace" or "Dashboard" as category
+5. Click "Install"
+
 
 ### Manual Installation
 1. Download `fast-navigation-card.js`
