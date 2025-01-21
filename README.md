@@ -25,3 +25,27 @@ A custom card for Home Assistant that provides a flexible navigation bar that ca
 resources:
   - url: /local/fast-navigation-card.js
     type: module
+```
+
+## Usage
+
+```yaml
+type: custom:fast-navigation-card
+position: top  # Options: 'top', 'bottom', 'sidebar'
+card:
+  type: grid
+  square: false
+  columns: 5
+  cards:
+    - type: custom:button-card
+      # ... your button configuration
+```
+
+## Options
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| position | string | 'top' | Position of the navigation bar. Options: 'top', 'bottom', 'sidebar' |
+```
+
+Möchten Sie, dass ich auch die `hacs.json` und eine passende MIT-Lizenz vorbereite?
