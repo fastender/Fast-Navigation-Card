@@ -1,0 +1,9 @@
+{
+    "name": "Fast Navigation Card",
+    "content_in_root": false,
+    "filename": "fast-navigation-card.js",
+    "render_readme": true,
+    "homeassistant": "2023.0.0",
+    "hide_default_branch": true,
+    "domains": ["lovelace"]
+}
